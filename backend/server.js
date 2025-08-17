@@ -11,6 +11,7 @@ import { errorHandler } from './middleware/error.middleware.js';
 import userRoutes from './routes/user.routes.js';
 import teamRoutes from './routes/team.routes.js';
 import eventRoutes from './routes/event.routes.js';
+import adminRoutes from './routes/admin.routes.js';
 import { DB_NAME } from './constants.js';
 
 // Initialize Express app
@@ -30,26 +31,7 @@ const connectDB=async()=>{
 connectDB();
 
 // Core Middleware
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  'http://localhost:8080',
-  'http://localhost:8081',
-  'http://127.0.0.1:8080',
-  'http://127.0.0.1:8081'
-];
-
-app.use(cors({
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json()); // Body parser for JSON
 app.use(express.urlencoded({ extended: true })); // Body parser for URL-encoded data
 app.use(cookieParser()); // Parser for cookies
@@ -69,6 +51,7 @@ app.use((req, res, next) => {
 app.use('/api/users', userRoutes);
 app.use('/api/teams', teamRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/admin', adminRoutes);
 
 // --- ERROR HANDLER MIDDLEWARE ---
 // This must be the last piece of middleware loaded
