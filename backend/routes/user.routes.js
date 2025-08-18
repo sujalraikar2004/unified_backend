@@ -12,7 +12,7 @@ import {
 import { protect } from '../middleware/auth.js';
 
 const router = express.Router();
-
+rou
 router.post('/register', register);
 router.get('/activate/:token', activateAccount);
 router.post('/login', login);

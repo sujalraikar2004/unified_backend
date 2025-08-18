@@ -13,6 +13,7 @@ import teamRoutes from './routes/team.routes.js';
 import eventRoutes from './routes/event.routes.js';
 import adminRoutes from './routes/admin.routes.js';
 import { DB_NAME } from './constants.js';
+import router from './routes/user.routes.js';
 
 // Initialize Express app
 const app = express();
@@ -67,6 +68,9 @@ app.use((req, res, next) => {
 });
 
 // --- API ROUTES ---
+app.use('/',(req,res)=>{
+    res.send("hello world")
+}   )
 app.use('/api/users', userRoutes);
 app.use('/api/teams', teamRoutes);
 app.use('/api/events', eventRoutes);
