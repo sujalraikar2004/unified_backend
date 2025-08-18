@@ -39,7 +39,7 @@ let allowedOrigins = [
 
 // Allow local development origins
 if (process.env.NODE_ENV === 'development') {
-  allowedOrigins = [...allowedOrigins, 'https://unified-admin-lovat.vercel.app', 'https://unified-website.vercel.app'];
+  allowedOrigins = [...allowedOrigins, 'https://unified-admin-lovat.vercel.app', 'https://unified-website.vercel.app','http://localhost:8080','http://localhost:5173'];
 }
 
 const corsOptions = {
