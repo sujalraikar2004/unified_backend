@@ -12,6 +12,10 @@ services:
         value: production
       - key: CLIENT_URL
         value: # Your deployed frontend URL
+      - key: UNIFIED_FRONTEND_URL
+        value: https://unified-website.vercel.app/
+      - key: ADMIN_FRONTEND_URL
+        value: https://unified-admin-lovat.vercel.app/
       - key: ACCESS_TOKEN_SECRET
         fromSecret: true # For security, store this as a secret in Render
       - key: REFRESH_TOKEN_SECRET
