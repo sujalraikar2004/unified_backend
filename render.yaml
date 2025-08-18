@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: club-event-backend
+    env: node
+    plan: free # or your desired plan
+    buildCommand: "npm install"
+    startCommand: "node -r dotenv/config backend/server.js"
+    envVars:
+      - key: MONGO_URL
+        value: mongodb+srv://raikarsujal62:sujal2004@cluster0.vfeet.mongodb.net
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: # Your deployed frontend URL
+      - key: ACCESS_TOKEN_SECRET
+        fromSecret: true # For security, store this as a secret in Render
+      - key: REFRESH_TOKEN_SECRET
+        fromSecret: true # For security, store this as a secret in Render
+      - key: EMAIL_USER
+        value: raikarsujal62@gmail.com
+      - key: EMAIL_PASS
+        fromSecret: true # For security, store this as a secret in Render
+      - key: EMAIL_FROM
+        value: '"Event Hub" <raikarsujal62@gmail.com>'
+      - key: ACCESS_TOKEN_EXPIRES_IN
+        value: 1d
+      - key: REFRESH_TOKEN_EXPIRES_IN
+        value: 7d
+      - key: RESET_PASSWORD_TOKEN_EXPIRES_IN
+        value: 10
