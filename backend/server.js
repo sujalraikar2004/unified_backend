@@ -32,10 +32,15 @@ const connectDB=async()=>{
 connectDB();
 
 // Core Middleware
-const allowedOrigins = [
+let allowedOrigins = [
   process.env.UNIFIED_FRONTEND_URL,
   process.env.ADMIN_FRONTEND_URL
 ];
+
+// Allow local development origins
+if (process.env.NODE_ENV === 'development') {
+  allowedOrigins = [...allowedOrigins, 'https://unified-admin-lovat.vercel.app', 'https://unified-website.vercel.app'];
+}
 
 const corsOptions = {
   origin: (origin, callback) => {
