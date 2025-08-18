@@ -68,9 +68,7 @@ app.use((req, res, next) => {
 });
 
 // --- API ROUTES ---
-app.use('/',(req,res)=>{
-    res.send("hello world")
-}   )
+
 app.use('/api/users', userRoutes);
 app.use('/api/teams', teamRoutes);
 app.use('/api/events', eventRoutes);
