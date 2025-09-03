@@ -34,13 +34,10 @@ let allowedOrigins = [
   process.env.UNIFIED_FRONTEND_URL,
   process.env.ADMIN_FRONTEND_URL,
   'https://unified-admin-lovat.vercel.app',
-  'https://unified-website.vercel.app'
+  'https://unified-website.vercel.app',
+  'http://localhost:8080',
+  'http://localhost:5173'
 ];
-
-// Allow local development origins
-if (process.env.NODE_ENV === 'development') {
-  allowedOrigins = [...allowedOrigins, 'http://localhost:8080','http://localhost:5173'];
-}
 
 const corsOptions = {
   origin: (origin, callback) => {
