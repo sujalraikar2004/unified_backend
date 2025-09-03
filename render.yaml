@@ -7,7 +7,7 @@ services:
     startCommand: "node -r dotenv/config backend/server.js"
     envVars:
       - key: MONGO_URL
-        value: mongodb+srv://unifiedstudentscommunity_db_user:v10T5gw2corjUacG@cluster0.fsa7tgx.mongodb.net
+        value: mongodb+srv://sujal1234:sujal2004@cluster0.l6lil.mongodb.net
       - key: NODE_ENV
         value: development
       - key: CLIENT_URL
