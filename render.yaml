@@ -9,7 +9,7 @@ services:
       - key: MONGO_URL
         value: mongodb+srv://unifiedstudentscommunity_db_user:v10T5gw2corjUacG@cluster0.fsa7tgx.mongodb.net
       - key: NODE_ENV
-        value: production
+        value: development
       - key: CLIENT_URL
         value: # Your deployed frontend URL
       - key: UNIFIED_FRONTEND_URL
