@@ -9,7 +9,7 @@ services:
       - key: MONGO_URL
         value: mongodb+srv://sujal1234:sujal2004@cluster0.l6lil.mongodb.net
       - key: NODE_ENV
-        value: development
+        value: production
       - key: CLIENT_URL
         value: # Your deployed frontend URL
       - key: UNIFIED_FRONTEND_URL

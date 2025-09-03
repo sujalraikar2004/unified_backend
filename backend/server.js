@@ -13,7 +13,7 @@ import teamRoutes from './routes/team.routes.js';
 import eventRoutes from './routes/event.routes.js';
 import adminRoutes from './routes/admin.routes.js';
 import { DB_NAME } from './constants.js';
-import router from './routes/user.routes.js';
+import router from './routes/user.routes.js';``
 
 // Initialize Express app
 const app = express();
