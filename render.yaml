@@ -7,7 +7,7 @@ services:
     startCommand: "node -r dotenv/config backend/server.js"
     envVars:
       - key: MONGO_URL
-        value: mongodb+srv://raikarsujal62:sujal2004@cluster0.vfeet.mongodb.net
+        value: mongodb+srv://unifiedstudentscommunity_db_user:v10T5gw2corjUacG@cluster0.fsa7tgx.mongodb.net
       - key: NODE_ENV
         value: production
       - key: CLIENT_URL
@@ -21,11 +21,11 @@ services:
       - key: REFRESH_TOKEN_SECRET
         fromSecret: true # For security, store this as a secret in Render
       - key: EMAIL_USER
-        value: raikarsujal62@gmail.com
+        value: unifiedstudentscommunity@gmail.com
       - key: EMAIL_PASS
         fromSecret: true # For security, store this as a secret in Render
       - key: EMAIL_FROM
-        value: '"Event Hub" <raikarsujal62@gmail.com>'
+        value: "Unified HUB" <unifiedstudentscommunity@gmail.com>
       - key: ACCESS_TOKEN_EXPIRES_IN
         value: 1d
       - key: REFRESH_TOKEN_EXPIRES_IN
