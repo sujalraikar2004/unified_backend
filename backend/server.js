@@ -12,8 +12,7 @@ import userRoutes from './routes/user.routes.js';
 import teamRoutes from './routes/team.routes.js';
 import eventRoutes from './routes/event.routes.js';
 import adminRoutes from './routes/admin.routes.js';
-import { DB_NAME } from './constants.js';
-import router from './routes/user.routes.js';``
+import router from './routes/user.routes.js';
 
 // Initialize Express app
 const app = express();
@@ -21,7 +20,7 @@ const app = express();
 // Database Connection
 const connectDB=async()=>{
     try {
-        const connectionInstance = await mongoose.connect(`${process.env.MONGO_URL}/${DB_NAME}`)
+        const connectionInstance = await mongoose.connect(process.env.MONGO_URL)
         console.log("mongodb connected\n",connectionInstance.connection.host,connectionInstance.connection.name);
 
     } catch (error) {
