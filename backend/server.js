@@ -12,8 +12,6 @@ import userRoutes from './routes/user.routes.js';
 import teamRoutes from './routes/team.routes.js';
 import eventRoutes from './routes/event.routes.js';
 import adminRoutes from './routes/admin.routes.js';
-import { DB_NAME } from './constants.js';
-import router from './routes/user.routes.js';``
 
 // Initialize Express app
 const app = express();
@@ -34,16 +32,19 @@ connectDB();
 // Core Middleware
 let allowedOrigins = [
   process.env.UNIFIED_FRONTEND_URL,
-  process.env.ADMIN_FRONTEND_URL
+  process.env.ADMIN_FRONTEND_URL,
+  'https://unified-admin-lovat.vercel.app',
+  'https://unified-website.vercel.app'
 ];
 
 // Allow local development origins
 if (process.env.NODE_ENV === 'development') {
-  allowedOrigins = [...allowedOrigins, 'https://unified-admin-lovat.vercel.app', 'https://unified-website.vercel.app','http://localhost:8080','http://localhost:5173'];
+  allowedOrigins = [...allowedOrigins, 'http://localhost:8080','http://localhost:5173'];
 }
 
 const corsOptions = {
   origin: (origin, callback) => {
+    console.log('Request Origin:', origin); // Log the incoming origin
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
 
